@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+      <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+          
+          <title>マジカルミライ プロコン</title>
+
+          <link rel="stylesheet" href="index.css">
+          
+          <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+          <script src="https://unpkg.com/textalive-app-api/dist/index.js"></script>
+
+      </head>
+
+      <body>
+
+
+        <!-- Loading Segment -->
+        <div id = "loading"><p>Loading...</p></div>
+        
+        
+        <!-- Song Box -->
+        <div id="music-player" class="far">
+        
+            <!--Player--> 
+            <div id="player">
+                <a href="#" id="play" class="disabled">&#xf144;</a>
+                <a href="#" id="stop" class="disabled">&#xf28d;</a>
+            </div>
+        
+            <div id="small-divider"></div>
+            <!--Credits-->
+            <div id="meta">
+                <div id="artist"><p>Artist: <span>-</span></p></div>
+                <div id="song"><p>Song: <span>-</span></p></div>
+            </div>
+            
+        </div>
+        
+        
+        <!-- LEN -->
+          <div id = "len">
+              <img src = "https://static.miraheze.org/projectsekaiwiki/thumb/f/fc/Ln_Len_chibi.png/180px-Ln_Len_chibi.png" img width="200" height="200" class = "">  
+          </div>
+        
+        <!-- Glowstick -->
+          <div id="glowstick">
+              <img src = "https://i.imgur.com/5d5c1eq.png" img width="70" height = "70" class = ""> 
+          </div>
+          
+          
+        <!-- Lyrics -->
+        <div id= "text">
+          <span></span>
+        </div> 
+        
+        
+        <!-- Container for Images -->
+        
+        <div id = "image" class = ""></div>
+        
+        
+        <!--SEEKBAR/PROGRESS BAR-->
+        <div id="seekbar"><div></div></div> 
+        
+        <!--SCORE BAR-->
+        <div id="scorebar"><div></div></div>
+        
+        <!-- Audio souce -->
+        <div id="media"></div>
+        
+        
+        <script src="index.js"></script>
+
+        
+      </body>
+
+  
+</html>

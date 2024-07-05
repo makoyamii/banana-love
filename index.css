@@ -1,0 +1,327 @@
+/* Background */
+body {
+  background: black;
+  background-attachment: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+/*Loading Screen*/
+#loading {
+  user-select: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  background: #0006;
+  z-index: 6;
+
+}
+
+    #loading.disabled {
+      display: none;
+    }
+
+    #loading > p {
+      position: fixed;
+      width: 100vw;
+      font-size: 40px;
+      top: 300px;
+      text-align: center;
+    }
+
+/*Music Control Box*/
+#music-player {
+  width: 140px;
+  height: 100px;
+  
+  border-radius: 5px;
+  opacity: 0.7;
+  padding: 12px;
+  margin: 20px;
+  background: black;
+  
+  /*stick page to left*/
+  position: fixed;
+  left: 0px;
+  top: 20px;
+  z-index: 5;
+
+}
+
+    /*when music player is disabled?*/
+    #music-player.disabled {
+      display: none;
+    }
+
+    /*play and pause*/
+    #music-player a {
+      color: yellow;
+      padding: 20px;
+      font-size: 25px;
+      text-decoration: none;
+      text-align: justify;
+    }
+
+    /*when you hover over the play and pause*/
+    #music-player a:hover {
+      color: rgb(255 148 56);
+    }
+
+/*Dividers*/
+#small-divider {
+  margin: 10px;
+  border-top: 2px solid #e69138;
+}
+
+/*SEEKBAR/SONG PROGRESS BAR*/
+#seekbar {
+  position: fixed;
+  top: 0;
+  left: 7px;
+  right: 7px;
+  
+  margin: 10px;
+  height: 20px;
+  border-radius: 5px;
+  background: rgba(255 216 91 / 100%);
+  z-index: 5;
+  
+}
+
+    /*fills in as song progress goes by*/
+    #seekbar > div {
+      position: fixed;
+      top: 0;
+      left: 7px;
+      right: 7px;
+
+      margin: 10px;
+      height: 20px;
+      width: 0;
+      background: rgba(0 0 0 / 100%);
+      border-radius: 5px;
+      cursor: pointer;
+      
+    }
+
+/*SCORE BAR*/
+#scorebar {
+  position: fixed;
+  bottom: 35px;
+  left: 7px;
+  right: 7px;
+  
+  margin: 10px;
+  width: 50px;
+  height: 500px;
+  border: solid rgba(233, 154, 29, 1);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .2);
+  z-index: 5;
+}
+
+    /*fills in as point go up*/
+    #scorebar > div {
+        position: fixed;
+        bottom: 35px;
+        left: 11px;
+        right: 7px;
+
+        margin: 10px;
+        width: 50px;
+        height: 1px;
+        border-radius: 5px;
+        background: rgba(255 216 91 / 90%);
+    }
+
+/*LEN ANIMATION*/
+@keyframes lenActive {
+  0% { transform: translate(0, -50px);} 
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lenBounce {
+
+    0% { 
+      transform: translate(0, -50px);
+    }
+  
+    100% { 
+      transform: translate(0, 0px);
+    } 
+
+}
+
+#len {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+
+}
+
+#len.beat {
+  animation: lenBounce .31s; 
+  animation-direction: alternate; 
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+  animation-iteration-count: infinite; 
+  animation-fill-mode: forwards;
+}
+
+#len.active {
+  animation: lenActive .001s;
+  animation-fill-mode: forwards;
+}
+
+
+
+/*GLOWSTICK ANIMATION*/
+#glowstick {
+  position: fixed;
+  left: 300px;
+  bottom: 10px;
+}
+
+#glowstick.beat {
+  animation: glowstickBounce .31s; 
+  animation-direction: alternate; 
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+  animation-iteration-count: infinite; 
+  animation-fill-mode: forwards;
+}
+
+#glowstick.active {
+  animation: glowstickActive .001s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes glowstickActive {
+  0% { transform: translate(50px, 0);} 
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glowstickBounce {
+
+    0% { 
+      transform: translate(50px, 0);
+    }
+  
+    100% { 
+      transform: translate(0, 0px);
+    } 
+
+}
+
+
+/* banana movement
+#image {
+  position: absolute;
+}
+
+#image.beat {
+  animation: lenBounce .31s; 
+  animation-direction: alternate; 
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+  animation-iteration-count: infinite; 
+  animation-fill-mode: forwards;
+}
+
+#image.active {
+  animation: lenActive .001s;
+  animation-fill-mode: forwards;
+}
+*/
+
+/*MY CODE STOPS HERE
+
+
+
+@keyframes showLyrics {
+   
+  from { color: red; }
+  to {color: blue; }
+  
+  /*
+  0% {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+  75% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  
+}
+
+
+@keyframes hideLyrics {
+  0% {
+    opacity: 1;
+  }
+  
+  75% {
+    opacity: 0;
+  }
+}
+
+*/
+
+/*LYRICS*/
+#text {
+  animation: showLyrics 0.5s;
+  z-index: 1;
+  padding: 30px 0 5px 400px;
+  line-height: 2em;
+  font-size: 70px;
+  /*font-family: "Shippori Mincho B1", serif;*/
+  color: yellow;
+  user-select: none;
+  cursor: pointer;
+  margin: 100px;
+  text-align: left; 
+  max-width: 700px;
+  /*overflow-wrap: break-word;*/
+  
+  
+  /*transform: rotateX(10deg) rotateY(-10deg);*/
+  
+}
+
+/*div was created in the newChar function*/
+#text > div {
+  /* 文字ごとに改行しない / No line-break per char */
+  display: inline-block;
+}
+
+
+#text.hide {
+  animation: hideLyrics 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+/*misc*/
+p {
+  color: white;
+  text-align: justify;
+  line-height: 10px;
+}
+
+
+
+
+
