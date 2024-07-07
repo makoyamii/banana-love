@@ -263,14 +263,14 @@ function newChar(current) {
   
   //if it gets too long, reset
   if(count == 0) {
-    if(textContainer.textContent.length > 37 && !stop) {
+    if((textContainer.textContent.length > (player.video.phrases[0].toString().length + 19)) && !stop) {
       console.log(count);
       console.log(textContainer.textContent);
       console.log((phrase).toString());
       resetChars();
       count++;
       console.log("FIRST TRY");
-    } else if (textContainer.textContent.length > 17 && stop) {
+    } else if (textContainer.textContent.length > player.video.phrases[0].toString().length - 1 && stop) {
       console.log(count);
       console.log(textContainer.textContent);
       console.log((phrase).toString());
