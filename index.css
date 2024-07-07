@@ -1,9 +1,13 @@
 /* Background */
 body {
   background: black;
+  background-image: url(https://i.imgur.com/yENR03v.png);
   background-attachment: absolute;
   height: 100%;
   width: 100%;
+
+  background-size: cover;
+  background-repeat: no-repeat;
   z-index: 2;
 }
 
@@ -181,13 +185,13 @@ body {
 
 
 /*GLOWSTICK ANIMATION*/
-#glowstick {
+#mikustick {
   position: fixed;
-  left: 300px;
-  bottom: 10px;
+  left: 200px;
+  bottom: 0px;
 }
 
-#glowstick.beat {
+#mikustick.beat {
   animation: glowstickBounce .31s; 
   animation-direction: alternate; 
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
@@ -195,7 +199,85 @@ body {
   animation-fill-mode: forwards;
 }
 
-#glowstick.active {
+#mikustick.active {
+  animation: glowstickActive .001s;
+  animation-fill-mode: forwards;
+}
+
+#rinstick {
+  position: fixed;
+  left: 500px;
+  bottom: 0px;
+}
+
+#rinstick.beat {
+  animation: glowstickBounce .31s; 
+  animation-direction: alternate; 
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+  animation-iteration-count: infinite; 
+  animation-fill-mode: forwards;
+}
+
+#rinstick.active {
+  animation: glowstickActive .001s;
+  animation-fill-mode: forwards;
+}
+
+
+#lukastick {
+  position: fixed;
+  left: 800px;
+  bottom: 0px;
+}
+
+#lukastick.beat {
+  animation: glowstickBounce .31s; 
+  animation-direction: alternate; 
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+  animation-iteration-count: infinite; 
+  animation-fill-mode: forwards;
+}
+
+#lukastick.active {
+  animation: glowstickActive .001s;
+  animation-fill-mode: forwards;
+}
+
+
+#meikostick {
+  position: fixed;
+  left: 1100px;
+  bottom: 0px;
+}
+
+#meikostick.beat {
+  animation: glowstickBounce .31s; 
+  animation-direction: alternate; 
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+  animation-iteration-count: infinite; 
+  animation-fill-mode: forwards;
+}
+
+#meikostick.active {
+  animation: glowstickActive .001s;
+  animation-fill-mode: forwards;
+}
+
+#kaitostick {
+  position: fixed;
+  left: 1400px;
+  bottom: 0px;
+}
+
+#kaitostick.beat {
+  animation: glowstickBounce .31s; 
+  animation-direction: alternate; 
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+  animation-iteration-count: infinite; 
+  animation-fill-mode: forwards;
+}
+
+#kaitostick.active {
   animation: glowstickActive .001s;
   animation-fill-mode: forwards;
 }
@@ -281,12 +363,12 @@ body {
   line-height: 2em;
   font-size: 70px;
   /*font-family: "Shippori Mincho B1", serif;*/
-  color: yellow;
+  color: rgb(232, 172, 60);
   user-select: none;
   cursor: pointer;
   margin: 100px;
   text-align: left; 
-  max-width: 700px;
+  max-width: 60%;
   /*overflow-wrap: break-word;*/
   
   
