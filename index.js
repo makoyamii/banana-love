@@ -252,22 +252,22 @@ function newChar(current) {
   //if it gets too long, reset
   if(count == 0) {
     if((textContainer.textContent.length > (player.video.phrases[0].toString().length + 19)) && !stop) {
-      console.log(count);
-      console.log(textContainer.textContent);
-      console.log((phrase).toString());
+      //console.log(count);
+      //console.log(textContainer.textContent);
+      //console.log((phrase).toString());
       resetChars();
       count++;
     } else if (textContainer.textContent.length > player.video.phrases[0].toString().length - 1 && stop) {
-      console.log(count);
-      console.log(textContainer.textContent);
-      console.log((phrase).toString());
+      //console.log(count);
+      //console.log(textContainer.textContent);
+      //console.log((phrase).toString());
       resetChars();
       count++;    
     }
   } else if(textContainer.textContent.length == phrase.toString().length) {
-    console.log(count);
-    console.log(textContainer.textContent);
-    console.log((phrase).toString());
+    //console.log(count);
+    //console.log(textContainer.textContent);
+    //console.log((phrase).toString());
     
     resetChars();
     count++;
