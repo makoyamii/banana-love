@@ -301,60 +301,6 @@ body {
 
 }
 
-
-/* banana movement
-#image {
-  position: absolute;
-}
-
-#image.beat {
-  animation: lenBounce .31s; 
-  animation-direction: alternate; 
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
-  animation-iteration-count: infinite; 
-  animation-fill-mode: forwards;
-}
-
-#image.active {
-  animation: lenActive .001s;
-  animation-fill-mode: forwards;
-}
-*/
-
-/*MY CODE STOPS HERE
-
-
-
-@keyframes showLyrics {
-   
-  from { color: red; }
-  to {color: blue; }
-  
-  /*
-  0% {
-    transform: translate3d(0, 100%, 0);
-    opacity: 0;
-  }
-  75% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-  
-}
-
-
-@keyframes hideLyrics {
-  0% {
-    opacity: 1;
-  }
-  
-  75% {
-    opacity: 0;
-  }
-}
-
-*/
-
 /*LYRICS*/
 #text {
   animation: showLyrics 0.5s;
@@ -362,41 +308,21 @@ body {
   padding: 30px 0 5px 400px;
   line-height: 2em;
   font-size: 70px;
-  /*font-family: "Shippori Mincho B1", serif;*/
   color: rgb(232, 172, 60);
+  text-shadow: 0 0 3px #fb6e3b, 0 0 5px #340609;
   user-select: none;
   cursor: pointer;
   margin: 100px;
   text-align: left; 
   max-width: 60%;
-  /*overflow-wrap: break-word;*/
-  
-  
-  /*transform: rotateX(10deg) rotateY(-10deg);*/
   
 }
 
-/*div was created in the newChar function*/
 #text > div {
-  /* 文字ごとに改行しない / No line-break per char */
   display: inline-block;
 }
 
 
-#text.hide {
-  animation: hideLyrics 0.5s;
-}
-
-
-
-
-
-
-
-
-
-
-/*misc*/
 p {
   color: white;
   text-align: justify;

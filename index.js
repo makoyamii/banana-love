@@ -1,6 +1,5 @@
 const {Player, stringToDataUrl } = TextAliveApp;
 
-//create the player object
 const player = new Player ({
   
   app: {token: "JKw2Ez69oKugTaqU" }, 
@@ -10,8 +9,6 @@ const player = new Player ({
 });
 
 
-
-//ADD LISTENER AND LOAD SONG INFORMATION
 player.addListener({
   onAppReady,
   onAppMediaChange,
@@ -35,15 +32,12 @@ const lukastick = document.querySelector('#lukastick');
 const meikostick = document.querySelector('#meikostick');
 const kaitostick = document.querySelector('#kaitostick');
 
-//seekbar info
 const seekbar = document.querySelector("#seekbar");
 const progressbar = seekbar.querySelector("div");
 
-//scorebar info
 const scorebar = document.querySelector("#scorebar");
 const pointbar = scorebar.querySelector("div");
 
-//beat and character
 let b, c;
 let count = 0;
 let points = 0;
@@ -116,9 +110,6 @@ function onTimerReady() {
 }
 
 
-
-  
-//UPDATING THE SEEKBAR/PROGRESS BAR AND LYRICS
 function onTimeUpdate(position) {
     progressbar.style.width = `${ parseInt((position * 1000) / player.video.duration) / 10 }%`;
  
@@ -151,7 +142,6 @@ function onTimeUpdate(position) {
     }
   
   //display lyrics by char
-  
     // if there are no lyrics, processing ends here
     if (!player.video.firstChar) {
       return;
@@ -243,14 +233,12 @@ document.querySelector("#player > a#stop").addEventListener("click", (e) => {
     points = 0;
     count = 0;
     pointbar.style.height = parseInt(0) + 'px';
-    //progressbar.style.height = parseInt(0) + 'px';
     stop = true;
   }
   return false;
 });
 
 
-//when you click on text, points go up
 //called when a new character is vocalized
 function newChar(current) {
   let phrase = player.video.phrases[count];
@@ -269,14 +257,12 @@ function newChar(current) {
       console.log((phrase).toString());
       resetChars();
       count++;
-      console.log("FIRST TRY");
     } else if (textContainer.textContent.length > player.video.phrases[0].toString().length - 1 && stop) {
       console.log(count);
       console.log(textContainer.textContent);
       console.log((phrase).toString());
       resetChars();
-      count++;
-      console.log("FIRST TRY WITH STOP");      
+      count++;    
     }
   } else if(textContainer.textContent.length == phrase.toString().length) {
     console.log(count);
@@ -285,7 +271,6 @@ function newChar(current) {
     
     resetChars();
     count++;
-    //Icanbea“SUPERHERO” - 18 char
   }
   
   
@@ -302,28 +287,13 @@ function newChar(current) {
       if(pointbar.offsetHeight < 500) {
         pointbar.style.height = parseInt(points)/3 + 'px';
       }
-      //console.log(points); 
-      //pointbar.style.height = `${parseInt(points)}`;
+      
     }
-    //console.log(e.target);
     
     e.target.innerHTML = '❤';
   }
     
   
-  /*
-    //console.log(e.target.parentNode.firstChild);
-    console.log(e.target.parentNode.firstChild.length);
-  
-  if(e.target.parentNode.firstChild.length === 3) {
-    console.log(e.target.parentNode.removeChild(e.target));    
-  } else {
-    console.log("else");
-  }
-
-    //textContainer.removeChild(e.target);
-*/    
-    
  
 }, false);
   
@@ -333,13 +303,6 @@ function newChar(current) {
 
 
 
-/* 
-textContainer.querySelector("span").onclick = changeColor;
-function changeColor() {
-  textContainer.querySelector("span").body.style.color = "purple";
-  return false;
-}
-*/ 
 
 //reset lyrics view
 function resetChars() {
